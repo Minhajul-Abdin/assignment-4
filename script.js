@@ -40,10 +40,15 @@ mainConainer.addEventListener('click', function(event){
   })*/
 
   function deleteContainer() {
+  
 mainConainer.addEventListener('click', function(event) {
+  //console.log("working?")
 if (event.target.classList.contains('del-btn')) {
   const card = event.target.closest('.applications-container');
+    console.log(event.target.closest('.job-title'));
+    
 card.parentNode.removeChild(card);
+
 
 
     if(rejectedList.length == 0){
@@ -59,7 +64,8 @@ card.parentNode.removeChild(card);
       calculateCount();
       togglebtn(current);
     }
-
+makecardelement();
+makecardelementRejective();
     calculateCount();
     togglebtn(current);
 }
@@ -250,6 +256,7 @@ function calculateCount(){
     const availableNumber = document.getElementById('Available-application-number');
 
     totalApplicationNumber.innerText = allapplicationsection.children.length;
+    //)
     availableNumber.innerText = allapplicationsection.children.length;
     totalInterviewNumber.innerText = interviewList.length;
     totalRejectNumber.innerText = rejectedList.length;
