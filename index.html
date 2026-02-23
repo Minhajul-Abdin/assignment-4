@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      * {
+        font-family: "Geist", sans-serif;
+      }
+      body {
+        background-color: #f8fafc;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="m-auto w-[69%] pt-15 pb-[30px]">
+      <div class="">
+        <h1 class="text-3xl text-[#002C5C] font-bold pb-5">
+          Job Application Tracker
+        </h1>
+        <div class="track-cards-container gap-4 flex justify-between">
+          <div
+            class="card px-[20px] w-full py-[20px] bg-base-100 card-xs shadow-sm"
+          >
+            <div class="card-body">
+              <h2 class="card-title text-[14px] text-[#323B49] font-medium">
+                Total
+              </h2>
+              <p
+                id="total-application-number"
+                class="text-2xl font-bold text-[#002C5C]"
+              >
+                0
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="card px-[20px] w-full py-[20px] bg-base-100 card-xs shadow-sm"
+          >
+            <div class="card-body">
+              <h2 class="card-title text-[14px] text-[#323B49] font-medium">
+                Interview
+              </h2>
+              <p
+                id="total-interview-number"
+                class="text-2xl font-bold text-[#10B981]"
+              >
+                0
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="card px-[20px] w-full py-[20px] bg-base-100 card-xs shadow-sm"
+          >
+            <div class="card-body">
+              <h2 class="card-title text-[14px] text-[#323B49] font-medium">
+                Rejected
+              </h2>
+              <p
+                id="total-rejected-number"
+                class="text-2xl font-bold text-[#EF4444]"
+              >
+                0
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <hr class="w-[69%] m-auto text-[#807f7f54]" />
+    <section class="pt-[30px] m-auto w-[69%]">
+      <div class="flex justify-between">
+        <h1 class="text-[20px] text-[#002C5C] font-semibold pb-5">
+          Available Jobs
+        </h1>
+        <div class="para-of-count flex justify-around gap-1">
+          <p
+            id="changed-count-reject"
+            class="hidden text-base font-semibold text-[#64748B]"
+          >
+            <span id="reject-span">0</span> of
+          </p>
+          <p
+            id="changed-count-interview"
+            class="hidden text-base font-semibold text-[#64748B]"
+          >
+            <span id="interview-span">0</span> of
+          </p>
+          <p class="text-base font-semibold text-[#64748B]">
+            <span id="Available-application-number">0</span> Jobs
+          </p>
+        </div>
+      </div>
+      <div class="pb-[20px]">
+        <button
+          onclick="(togglebtn('all-application-btn'), allcount())"
+          id="all-application-btn"
+          class="btn px-[30px] py-[8px] bg-[#3B82F6] text-white"
+        >
+          All
+        </button>
+        <button
+          onclick="(togglebtn('all-interview-btn'), interviewCount())"
+          id="all-interview-btn"
+          class="btn px-[30px] py-[8px] bg-[#3b83f600] text-[#323B49]"
+        >
+          Interview
+        </button>
+        <button
+          onclick="(togglebtn('all-rejected-btn'), rejectCount())"
+          id="all-rejected-btn"
+          class="all-rejected-btn btn px-[30px] py-[8px] bg-[#3b83f600] text-[#323B49]"
+        >
+          Rejected
+        </button>
+      </div>
+    </section>
+
+    <main id="main-container">
+      <section
+        id="all-application-section"
+        class="m-auto w-[69%] application-section"
+      >
+        <div
+          id="applications-container-id"
+          class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
+        >
+          <div class="aplication-info">
+            <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
+              Mobile First Corp
+            </h1>
+            <p class="job-role text-[#64748B]">React Native Developer</p>
+            <p class="job-info text-[#64748B] text-sm py-6">
+              Los Angeles, CA • Part-time • $80,000 - $120,000
+            </p>
+            <span
+              class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
+              >NOT APPLIED</span
+            >
+            <p class="job-more-info pt-3 pb-6">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+            <div class="btn-container">
+              <button
+                class="interview-btn btn btn-outline btn-success font-semibold text-sm uppercase"
+              >
+                Interview
+              </button>
+              <button
+                class="rejected-btn btn btn-outline btn-error font-semibold text-sm uppercase"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+          <div class="del-btn">
+            <button
+              onclick="deleteContainer()"
+              class="btn btn-soft p-3 bg-white rounded-full"
+            >
+              <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          id="applications-container-id"
+          class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
+        >
+          <div class="aplication-info">
+            <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
+              2
+            </h1>
+            <p class="job-role text-[#64748B]">React Native Developer</p>
+            <p class="job-info text-[#64748B] text-sm py-6">
+              Los Angeles, CA • Part-time • $80,000 - $120,000
+            </p>
+            <span
+              class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
+              >NOT APPLIED</span
+            >
+            <p class="job-more-info pt-3 pb-6">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+            <div class="btn-container">
+              <button
+                class="interview-btn btn btn-outline btn-success font-semibold text-sm uppercase"
+              >
+                Interview
+              </button>
+              <button
+                class="rejected-btn btn btn-outline btn-error font-semibold text-sm uppercase"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+          <div class="del-btn">
+            <button
+              onclick="deleteContainer()"
+              class="btn btn-soft p-3 bg-white rounded-full"
+            >
+              <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          id="applications-container-id"
+          class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
+        >
+          <div class="aplication-info">
+            <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
+              3
+            </h1>
+            <p class="job-role text-[#64748B]">React Native Developer</p>
+            <p class="job-info text-[#64748B] text-sm py-6">
+              Los Angeles, CA • Part-time • $80,000 - $120,000
+            </p>
+            <span
+              class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
+              >NOT APPLIED</span
+            >
+            <p class="job-more-info pt-3 pb-6">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+            <div class="btn-container">
+              <button
+                class="interview-btn btn btn-outline btn-success font-semibold text-sm uppercase"
+              >
+                Interview
+              </button>
+              <button
+                class="rejected-btn btn btn-outline btn-error font-semibold text-sm uppercase"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+          <div class="del-btn">
+            <button
+              onclick="deleteContainer()"
+              class="btn btn-soft p-3 bg-white rounded-full"
+            >
+              <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          id="applications-container-id"
+          class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
+        >
+          <div class="aplication-info">
+            <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
+              4
+            </h1>
+            <p class="job-role text-[#64748B]">React Native Developer</p>
+            <p class="job-info text-[#64748B] text-sm py-6">
+              Los Angeles, CA • Part-time • $80,000 - $120,000
+            </p>
+            <span
+              class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
+              >NOT APPLIED</span
+            >
+            <p class="job-more-info pt-3 pb-6">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+            <div class="btn-container">
+              <button
+                class="interview-btn btn btn-outline btn-success font-semibold text-sm uppercase"
+              >
+                Interview
+              </button>
+              <button
+                class="rejected-btn btn btn-outline btn-error font-semibold text-sm uppercase"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+          <div class="del-btn">
+            <button
+              onclick="deleteContainer()"
+              class="btn btn-soft p-3 bg-white rounded-full"
+            >
+              <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="interview" class="hidden m-auto w-[69%]"></section>
+      <section id="reject" class="hidden m-auto w-[69%]"></section>
+    </main>
+
+    <section
+      id="no-applicaton"
+      class="hidden m-auto w-[69%] no-applicaton-section"
+    >
+      <div class="bg-white rounded w-full items-center py-[130px] px-10">
+        <img class="mx-auto" src="./B13-A4-PH-Job-Tracker/jobs.png" alt="" />
+        <h1 class="text-2xl text-center font-semibold text-[#002C5C] pt-5">
+          No jobs available
+        </h1>
+        <h3 class="text-[#323B49] text-center text-[16px]">
+          Check back soon for new job opportunities
+        </h3>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
