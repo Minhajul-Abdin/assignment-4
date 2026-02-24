@@ -1,39 +1,39 @@
-1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+## 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-   ANSWER:
+### ANSWER:
 
-   getElementById --> gets element from the given ID
-   getElementsByClassName --> gets element from the given Class
-   querySelector --> Can get both ID and Class just like css
-   querySelectorAll --> Gives and object from class and gives access to HTML elements
-   as well as a single element
+- getElementById --> gets element from the given ID
+- getElementsByClassName --> gets element from the given Class
+- querySelector --> Can get both ID and Class just like css
+- querySelectorAll --> Gives and object from class and gives access to HTML elements
+  as well as a single element
 
-2. How do you create and insert a new element into the DOM?
+## 2. How do you create and insert a new element into the DOM?
 
-   ANSWER:
+### ANSWER:
 
-   Using the createElement(""); we can create any new element in DOM
+- Using the createElement(""); we can create any new element in DOM
 
-3. What is Event Bubbling? And how does it work?
+## 3. What is Event Bubbling? And how does it work?
 
-   ANSWER:
+### ANSWER:
 
-   when ever any particular element is clicked on html element
-   it automatically clicks all the parent elements as well
-   so, if i click on a element with in a DIV it will automatically click on the div as well
+when ever any particular element is clicked on html element
+it automatically clicks all the parent elements as well
+so, if i click on a element with in a DIV it will automatically click on the div as well
 
-4. What is Event Delegation in JavaScript? Why is it useful?
+## 4. What is Event Delegation in JavaScript? Why is it useful?
 
-   ANSWER:
+### ANSWER:
 
-   Any event that happens to the parent gets passed down to the childrens
-   it helps to resuce code
-   so, each time the parent is clicked
-   it automatically runs the given code for child
+Any event that happens to the parent gets passed down to the childrens
+it helps to resuce code
+so, each time the parent is clicked
+it automatically runs the given code for child
 
-5. What is the difference between preventDefault() and stopPropagation() methods?
+## 5. What is the difference between preventDefault() and stopPropagation() methods?
 
-   ANSWER:
+### ANSWER:
 
-   preventDefault() --> it doesnt do the default action when a particular action is called
-   stopPropagation() --> it stops Event Bubbling
+- preventDefault() --> it doesnt do the default action when a particular action is called
+- stopPropagation() --> it stops Event Bubbling
