@@ -30,15 +30,28 @@
       body {
         background-color: #f8fafc;
       }
+      /* .section1{} */
+      @media screen and (max-width: 640px) {
+        .section1 {
+          width: 90%;
+        }
+        .cards-co {
+          flex-wrap: wrap;
+        }
+      }
     </style>
   </head>
   <body>
-    <header class="m-auto w-[69%] pt-15 pb-[30px]">
+    <header
+      class="section1 m-auto w-[69%] pt-15 pb-[30px] md:w-[69%] sm:w-[90%]"
+    >
       <div class="">
         <h1 class="text-3xl text-[#002C5C] font-bold pb-5">
           Job Application Tracker
         </h1>
-        <div class="track-cards-container gap-4 flex justify-between">
+        <div
+          class="track-cards-container cards-co gap-4 flex justify-between md:flex-nowrap sm:flex-wrap"
+        >
           <div
             class="card px-[20px] w-full py-[20px] bg-base-100 card-xs shadow-sm"
           >
@@ -90,7 +103,7 @@
       </div>
     </header>
     <hr class="w-[69%] m-auto text-[#807f7f54]" />
-    <section class="pt-[30px] m-auto w-[69%]">
+    <section class="section1 pt-[30px] m-auto w-[69%] md:w-[69%] sm:w-[90%]">
       <div class="flex justify-between">
         <h1 class="text-[20px] text-[#002C5C] font-semibold pb-5">
           Available Jobs
@@ -141,8 +154,9 @@
     <main id="main-container">
       <section
         id="all-application-section"
-        class="m-auto w-[69%] application-section"
+        class="section1 m-auto w-[69%] application-section md:w-[69%] sm:w-[90%]"
       >
+        <!-- 1st div -->
         <div
           id="applications-container-id"
           class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
@@ -179,21 +193,22 @@
           <div class="del-btn">
             <button
               onclick="deleteContainer()"
-              class="btn btn-soft p-3 bg-white rounded-full"
+              class="del-btn btn btn-soft p-3 bg-white rounded-full"
             >
               <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
             </button>
           </div>
         </div>
+        <!-- 2nd div -->
         <div
           id="applications-container-id"
           class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
         >
           <div class="aplication-info">
             <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
-              2
+              WebFlow Agency
             </h1>
-            <p class="job-role text-[#64748B]">React Native Developer</p>
+            <p class="job-role text-[#64748B]">Web Designer & Developer</p>
             <p class="job-info text-[#64748B] text-sm py-6">
               Los Angeles, CA • Part-time • $80,000 - $120,000
             </p>
@@ -202,8 +217,8 @@
               >NOT APPLIED</span
             >
             <p class="job-more-info pt-3 pb-6">
-              Build cross-platform mobile applications using React Native. Work
-              on products used by millions of users worldwide.
+              Create stunning web experiences for high-profile clients. Must
+              have portfolio and experience with modern web design trends.
             </p>
             <div class="btn-container">
               <button
@@ -221,31 +236,32 @@
           <div class="del-btn">
             <button
               onclick="deleteContainer()"
-              class="btn btn-soft p-3 bg-white rounded-full"
+              class="del-btn btn btn-soft p-3 bg-white rounded-full"
             >
               <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
             </button>
           </div>
         </div>
+        <!-- 3rd div -->
         <div
           id="applications-container-id"
           class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
         >
           <div class="aplication-info">
             <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
-              3
+              DataViz Solutions
             </h1>
-            <p class="job-role text-[#64748B]">React Native Developer</p>
+            <p class="job-role text-[#64748B]">Data Visualization Specialist</p>
             <p class="job-info text-[#64748B] text-sm py-6">
-              Los Angeles, CA • Part-time • $80,000 - $120,000
+              Boston, MA • Full-time • $125,000 - $165,000
             </p>
             <span
               class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
               >NOT APPLIED</span
             >
             <p class="job-more-info pt-3 pb-6">
-              Build cross-platform mobile applications using React Native. Work
-              on products used by millions of users worldwide.
+              Transform complex data into compelling visualizations. Required
+              skills: D3.js, React, and strong analytical thinking.
             </p>
             <div class="btn-container">
               <button
@@ -263,31 +279,32 @@
           <div class="del-btn">
             <button
               onclick="deleteContainer()"
-              class="btn btn-soft p-3 bg-white rounded-full"
+              class="del-btn btn btn-soft p-3 bg-white rounded-full"
             >
               <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
             </button>
           </div>
         </div>
+        <!-- 4th div -->
         <div
           id="applications-container-id"
           class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
         >
           <div class="aplication-info">
             <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
-              4
+              CloudFirst Inc
             </h1>
-            <p class="job-role text-[#64748B]">React Native Developer</p>
+            <p class="job-role text-[#64748B]">Backend Developer</p>
             <p class="job-info text-[#64748B] text-sm py-6">
-              Los Angeles, CA • Part-time • $80,000 - $120,000
+              Seattle, WA • Full-time • $140,000 - $190,000
             </p>
             <span
               class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
               >NOT APPLIED</span
             >
             <p class="job-more-info pt-3 pb-6">
-              Build cross-platform mobile applications using React Native. Work
-              on products used by millions of users worldwide.
+              Design and maintain scalable backend systems using Python and AWS.
+              Work with modern DevOps practices and cloud infrastructure.
             </p>
             <div class="btn-container">
               <button
@@ -305,7 +322,183 @@
           <div class="del-btn">
             <button
               onclick="deleteContainer()"
-              class="btn btn-soft p-3 bg-white rounded-full"
+              class="del-btn btn btn-soft p-3 bg-white rounded-full"
+            >
+              <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 5th div -->
+        <div
+          id="applications-container-id"
+          class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
+        >
+          <div class="aplication-info">
+            <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
+              Innovation Labs
+            </h1>
+            <p class="job-role text-[#64748B]">UI/UX Engineer</p>
+            <p class="job-info text-[#64748B] text-sm py-6">
+              Austin, TX • Full-time • $110,000 - $150,000
+            </p>
+            <span
+              class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
+              >NOT APPLIED</span
+            >
+            <p class="job-more-info pt-3 pb-6">
+              Create beautiful and functional user interfaces for our suite of
+              products. Strong design skills and frontend development expertise
+              required.
+            </p>
+            <div class="btn-container">
+              <button
+                class="interview-btn btn btn-outline btn-success font-semibold text-sm uppercase"
+              >
+                Interview
+              </button>
+              <button
+                class="rejected-btn btn btn-outline btn-error font-semibold text-sm uppercase"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+          <div class="del-btn">
+            <button
+              onclick="deleteContainer()"
+              class="del-btn btn btn-soft p-3 bg-white rounded-full"
+            >
+              <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 6th div -->
+        <div
+          id="applications-container-id"
+          class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
+        >
+          <div class="aplication-info">
+            <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
+              MegaCorp Solutions
+            </h1>
+            <p class="job-role text-[#64748B]">JavaScript Developer</p>
+            <p class="job-info text-[#64748B] text-sm py-6">
+              New York, NY • Full-time • $130,000 - $170,00
+            </p>
+            <span
+              class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
+              >NOT APPLIED</span
+            >
+            <p class="job-more-info pt-3 pb-6">
+              Build enterprise applications with JavaScript and modern
+              frameworks. We offer competitive compensation, health insurance,
+              and professional development opportunities.
+            </p>
+            <div class="btn-container">
+              <button
+                class="interview-btn btn btn-outline btn-success font-semibold text-sm uppercase"
+              >
+                Interview
+              </button>
+              <button
+                class="rejected-btn btn btn-outline btn-error font-semibold text-sm uppercase"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+          <div class="del-btn">
+            <button
+              onclick="deleteContainer()"
+              class="del-btn btn btn-soft p-3 bg-white rounded-full"
+            >
+              <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 7th div -->
+        <div
+          id="applications-container-id"
+          class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
+        >
+          <div class="aplication-info">
+            <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
+              StartupXYZ
+            </h1>
+            <p class="job-role text-[#64748B]">Full Stack Engineer</p>
+            <p class="job-info text-[#64748B] text-sm py-6">
+              Remote • Full-time • $120,000 - $160,000
+            </p>
+            <span
+              class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
+              >NOT APPLIED</span
+            >
+            <p class="job-more-info pt-3 pb-6">
+              Join our fast-growing startup and work on our core platform.
+              Experience with Node.js and React required. Great benefits and
+              equity package included.
+            </p>
+            <div class="btn-container">
+              <button
+                class="interview-btn btn btn-outline btn-success font-semibold text-sm uppercase"
+              >
+                Interview
+              </button>
+              <button
+                class="rejected-btn btn btn-outline btn-error font-semibold text-sm uppercase"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+          <div class="del-btn">
+            <button
+              onclick="deleteContainer()"
+              class="del-btn btn btn-soft p-3 bg-white rounded-full"
+            >
+              <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 8th div -->
+        <div
+          id="applications-container-id"
+          class="applications-container w-full flex justify-between p-6 bg-white rounded mb-4"
+        >
+          <div class="aplication-info">
+            <h1 class="job-title text-[#002C5C] font-semibold text-[18px]">
+              TechCorp Industries
+            </h1>
+            <p class="job-role text-[#64748B]">Senior Frontend Developer</p>
+            <p class="job-info text-[#64748B] text-sm py-6">
+              San Francisco, CA • Full-time • $130,000 - $175,000
+            </p>
+            <span
+              class="job-state bg-[#EEF4FF] py-[12px] px-[8px] text-sm font-medium text-[#002C5C] rounded-s-md"
+              >NOT APPLIED</span
+            >
+            <p class="job-more-info pt-3 pb-6">
+              We are looking for an experienced Frontend Developer to build
+              scalable web applications using React and TypeScript. You will
+              work with a talented team on cutting-edge projects.
+            </p>
+            <div class="btn-container">
+              <button
+                class="interview-btn btn btn-outline btn-success font-semibold text-sm uppercase"
+              >
+                Interview
+              </button>
+              <button
+                class="rejected-btn btn btn-outline btn-error font-semibold text-sm uppercase"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+          <div class="del-btn">
+            <button
+              onclick="deleteContainer()"
+              class="del-btn btn btn-soft p-3 bg-white rounded-full"
             >
               <i class="del-btn fa-regular fa-trash-can text-[#64748B]"></i>
             </button>
@@ -313,24 +506,29 @@
         </div>
       </section>
 
-      <section id="interview" class="hidden m-auto w-[69%]"></section>
-      <section id="reject" class="hidden m-auto w-[69%]"></section>
+      <section
+        id="interview"
+        class="section1 hidden m-auto w-[69%] md:w-[69%] sm:w-[90%]"
+      ></section>
+      <section
+        id="reject"
+        class="section1 hidden m-auto w-[69%] md:w-[69%] sm:w-[90%]"
+      ></section>
+      <section
+        id="no-applicaton"
+        class="section1 hidden m-auto w-[69%] no-applicaton-section md:w-[69%] sm:w-[90%]"
+      >
+        <div class="bg-white rounded w-full items-center py-[130px] px-10">
+          <img class="mx-auto" src="./B13-A4-PH-Job-Tracker/jobs.png" alt="" />
+          <h1 class="text-2xl text-center font-semibold text-[#002C5C] pt-5">
+            No jobs available
+          </h1>
+          <h3 class="text-[#323B49] text-center text-[16px]">
+            Check back soon for new job opportunities
+          </h3>
+        </div>
+      </section>
     </main>
-
-    <section
-      id="no-applicaton"
-      class="hidden m-auto w-[69%] no-applicaton-section"
-    >
-      <div class="bg-white rounded w-full items-center py-[130px] px-10">
-        <img class="mx-auto" src="./B13-A4-PH-Job-Tracker/jobs.png" alt="" />
-        <h1 class="text-2xl text-center font-semibold text-[#002C5C] pt-5">
-          No jobs available
-        </h1>
-        <h3 class="text-[#323B49] text-center text-[16px]">
-          Check back soon for new job opportunities
-        </h3>
-      </div>
-    </section>
 
     <script src="script.js"></script>
   </body>
